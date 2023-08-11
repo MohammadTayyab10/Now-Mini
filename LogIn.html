@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        h1{
+            font-weight: bold;
+            font-size: xx-large;
+            margin-top: 50px;
+        }
+        span{
+            color: gray;
+            margin-right: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #4546e5;
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        .inp{
+            width: 400px;
+            border-radius: 7px;
+            border: none;
+            border: 1px solid rgb(214, 214, 214);
+            margin-top: -22px;
+        }
+        .btn{
+            width: 400px;
+            margin-top: 20px;
+            background-color: #4546e5;
+            color: #fff;
+            font-size: 14px;
+        }
+        #p{
+            margin-right: 310px;
+            margin-top: 40px;
+            color: rgb(66, 66, 66);
+            font-weight: 500;
+        }
+        input::placeholder{
+            font-style: italic;
+            color: rgb(180, 180, 180);
+        }
+    </style>
+</head>
+
+<body>
+        <nav class="sticky top-0 bg-slate-900 bg-opacity-90 backdrop-blur backdrop-filter z-40"
+            data-headlessui-state="">
+            <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+                <div class="relative flex h-16 md:h-20 lg:gap-x-4 justify-between items-center">
+                    <div class="flex items-center justify-center gap-x-2">
+                        <div class="flex-shrink-0 flex items-center text-2xl font-bold focus:outline-none focus:ring px-3 py-2 rounded-sm gap-x-2 cursor-pointer"
+                            href="/"><span
+                                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
+                                        style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                        alt="" aria-hidden="true"
+                                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2732%27%20height=%2732%27/%3e"></span><img
+                                    alt=""
+                                    src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg"
+                                    decoding="async" data-nimg="intrinsic" class="w-full h-full"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                    srcset="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 1x, https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 2x"><noscript><img
+                                        alt=""
+                                        srcSet="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 1x, https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 2x"
+                                        src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg"
+                                        decoding="async" data-nimg="intrinsic"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full" loading="lazy" /></noscript></span><span
+                                class="text-white hidden md:inline">NextShop</span></div>
+                        <div class="hidden lg:block lg:ml-6">
+                            <div class="flex space-x-4"><span
+                                    class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                                    href="./index.html"><a href="./index.html" style="color:white">Home</a></span><span
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                                    href="/search"><a href="./shopnow.html" style="color:white">Shop Now</a></span></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex justify-center items-center px-2 lg:ml-6 lg:justify-end">
+                        <form class="max-w-lg w-full lg:max-w-xs"><label for="search" class="sr-only">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" aria-hidden="true"
+                                        class="h-5 w-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div><input type="search" id="search" name="search"
+                                    class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 sm:text-sm lg:max-w-sm"
+                                    placeholder="Search" value="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="flex items-center lg:hidden"><button
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white"
+                            id="headlessui-disclosure-button-2" type="button" aria-expanded="false"
+                            data-headlessui-state=""><span class="sr-only">Open main menu</span><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" aria-hidden="true" class="block h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16">
+                                </path>
+                            </svg></button></div>
+                    <div class="flex items-center"><button type="button"
+                            class="relative flex-shrink-0 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white rounded-md"
+                            href="/cart"><span class="sr-only">View Cart</span><svg xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                aria-hidden="true" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg></button>
+                        <div class="relative flex-shrink-0 z-40" data-headlessui-state="">
+                            <div class="flex-shrink-0 text-white hidden lg:flex flex-col ml-4"><span
+                                    class="text-gray-300 font-medium">Hello,</span><button
+                                    class="focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white cursor-pointer"
+                                    id="headlessui-menu-button-1" type="button" aria-haspopup="true"
+                                    aria-expanded="false" data-headlessui-state=""><span class="font-medium text-white"
+                                        href="./SignIn.html">Sign In</span></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    <center>
+        <div id="main">
+            <h1>Sign in to your account</h1>
+            <span>Or</span><a href="./SignUp.html">Create a new one</a><br>
+            <p id="p">Email address</p>
+            <input type="text" class="inp" id="email" placeholder="Enter Email" required="required"><br />
+            <p id="p"> Password</p>
+            <input type="password" class="inp" id="password" placeholder="Enter Password" required="required"><br />
+            <button id="btn" class="btn">Sign In</button><br>
+            <button class="btn">Sign in as guest</button>
+        </div>
+    </center>
+    <footer class="bg-gray-800 mt-4" aria-labelledby="footer-heading">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <p class="mt-2 text-base text-gray-300 md:mt-0">© 2023 NextShop. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+    <script type="module" src="LogIn.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

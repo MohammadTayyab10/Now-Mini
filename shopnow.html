@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Now</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="__next" data-reactroot="">
+        <style>
+            .shopout:hover{
+background-color: blueviolet;
+            }
+
+            #nprogress {
+                pointer-events: none;
+            }
+
+            #nprogress .bar {
+                background: #4f46e5;
+                position: fixed;
+                z-index: 9999;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+            }
+
+            #nprogress .peg {
+                display: block;
+                position: absolute;
+                right: 0px;
+                width: 100px;
+                height: 100%;
+                box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5;
+                opacity: 1;
+                -webkit-transform: rotate(3deg) translate(0px, -4px);
+                -ms-transform: rotate(3deg) translate(0px, -4px);
+                transform: rotate(3deg) translate(0px, -4px);
+            }
+
+            #nprogress .spinner {
+                display: block;
+                position: fixed;
+                z-index: 1031;
+                top: 15px;
+                right: 15px;
+            }
+
+            #nprogress .spinner-icon {
+                width: 18px;
+                height: 18px;
+                box-sizing: border-box;
+                border: solid 2px transparent;
+                border-top-color: #4f46e5;
+                border-left-color: #4f46e5;
+                border-radius: 50%;
+                -webkit-animation: nprogresss-spinner 400ms linear infinite;
+                animation: nprogress-spinner 400ms linear infinite;
+            }
+
+            .nprogress-custom-parent {
+                overflow: hidden;
+                position: relative;
+            }
+
+            .nprogress-custom-parent #nprogress .spinner,
+            .nprogress-custom-parent #nprogress .bar {
+                position: absolute;
+            }
+
+            @-webkit-keyframes nprogress-spinner {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @keyframes nprogress-spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+
+
+
+        <!-- <div>
+        <div class="py-16 xl:max-w-7xl xl:mx-auto xl:px-8">
+            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Category</h2>
+            <div class="mt-4 scrollbar">
+                <div class="-my-2">
+                    <div
+                        class="box-content py-2 relative h-80 overflow-x-auto overflow-y-hidden xl:overflow-visible">
+                        <div
+                            class="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-4 xl:gap-x-8">
+                            <div>
+                                <div class="relative w-56 h-[17rem] rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto cursor-pointer"
+                                    href="/search?category=Hoodies"><span class="absolute inset-0"><span
+                                            style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                                alt="Hoodies" sizes="100vw"
+                                                srcset="./image (5).webp"
+                                                src="./image (5).webp"
+                                                decoding="async" data-nimg="fill"
+                                                class="object-center object-cover"
+                                                style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></span><span
+                                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span><span
+                                        class="relative mt-auto text-center text-xl font-bold text-white">Hoodies</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative w-56 h-[17rem] rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto cursor-pointer"
+                                    href="/search?category=T-shirts"><span
+                                        class="absolute inset-0"><span
+                                            style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                                alt="T-Shirts" sizes="100vw"
+                                                srcset="./image (3).webp"
+                                                src="./image (3).webp"
+                                                decoding="async" data-nimg="fill"
+                                                class="object-center object-cover"
+                                                style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></span><span
+                                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span><span
+                                        class="relative mt-auto text-center text-xl font-bold text-white">T-Shirts</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative w-56 h-[17rem] rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto cursor-pointer"
+                                    href="/search?category=Jackets"><span class="absolute inset-0"><span
+                                            style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                                alt="Jackets" sizes="100vw"
+                                                srcset="./image (7).webp"
+                                                src="./image (7).webp"
+                                                decoding="async" data-nimg="fill"
+                                                class="object-center object-cover"
+                                                style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></span><span
+                                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span><span
+                                        class="relative mt-auto text-center text-xl font-bold text-white">Jackets</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative w-56 h-[17rem] rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto cursor-pointer"
+                                    href="/search?category=Trousers"><span
+                                        class="absolute inset-0"><span
+                                            style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"><img
+                                                alt="Trousers" sizes="100vw"
+                                                srcset="./image (9).webp"
+                                                src="./image (9).webp"
+                                                decoding="async" data-nimg="fill"
+                                                class="object-center object-cover"
+                                                style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></span><span
+                                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span><span
+                                        class="relative mt-auto text-center text-xl font-bold text-white">Trousers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section aria-labelledby="products-heading" class="xl:max-w-7xl xl:mx-auto xl:px-8">
+        <div class="flex px-4 sm:px-6 py-4 sm:items-center sm:justify-between lg:px-8 xl:px-0">
+            <h2 id="favorites-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">New
+                Arrivals</h2>
+            <p class="hidden md:block text-sm font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer"
+                href="/search?sort=newest">Browse all<span aria-hidden="true"> →</span></p>
+        </div> -->
+
+        <h1>Shop Now</h1>
+
+        <div class="flex flex-col min-h-screen bg-gray-100">
+            <nav class="sticky top-0 bg-slate-900 bg-opacity-90 backdrop-blur backdrop-filter z-40"
+                data-headlessui-state="">
+                <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+                    <div class="relative flex h-16 md:h-20 lg:gap-x-4 justify-between items-center">
+                        <div class="flex items-center justify-center gap-x-2">
+                            <div class="flex-shrink-0 flex items-center text-2xl font-bold focus:outline-none focus:ring px-3 py-2 rounded-sm gap-x-2 cursor-pointer"
+                                href="/"><span
+                                    style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
+                                        style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
+                                            style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                            alt="" aria-hidden="true"
+                                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2732%27%20height=%2732%27/%3e"></span><img
+                                        alt=""
+                                        src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg"
+                                        decoding="async" data-nimg="intrinsic" class="w-full h-full"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        srcset="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 1x, https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 2x"><noscript><img
+                                            alt=""
+                                            srcSet="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 1x, https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg 2x"
+                                            src="https://www.next.co.uk/static-content/icons/header/next/v1/vision/new-next-black-logo.svg"
+                                            decoding="async" data-nimg="intrinsic"
+                                            style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                            class="w-full h-full" loading="lazy" /></noscript></span><span
+                                    class="text-white hidden md:inline"><a href="./product.html">NextShop</a></span></div>
+                            <div class="hidden lg:block lg:ml-6">
+                                <div class="flex space-x-4"><span
+                                        class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                                        href="/"><a href="./index.html">Home</a></span><span
+                                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                                        href="/search"><a href="./shopnow.html" style="color: aliceblue;">Shop
+                                            Now</a></span></div>
+                            </div>
+                        </div>
+                        <div class="flex-1 flex justify-center items-center px-2 lg:ml-6 lg:justify-end">
+                            <form class="max-w-lg w-full lg:max-w-xs"><label for="search" class="sr-only">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="currentColor" aria-hidden="true"
+                                            class="h-5 w-5 text-gray-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </div><input type="search" id="search" name="search"
+                                        class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 sm:text-sm lg:max-w-sm"
+                                        placeholder="Search" value="">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="flex items-center lg:hidden"><button
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white"
+                                id="headlessui-disclosure-button-2" type="button" aria-expanded="false"
+                                data-headlessui-state=""><span class="sr-only">Open main menu</span><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" aria-hidden="true" class="block h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16">
+                                    </path>
+                                </svg></button></div>
+                        <div class="flex items-center"><button type="button"
+                                class="relative flex-shrink-0 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white rounded-md"
+                                href="/cart"><span class="sr-only">View Cart</span><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg></button>
+                            <div class="relative flex-shrink-0 z-40" data-headlessui-state="">
+                                <div class="flex-shrink-0 text-white hidden lg:flex flex-col ml-4"><span
+                                        class="text-gray-300 font-medium">Hello,</span><button
+                                        class="focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white cursor-pointer"
+                                        id="headlessui-menu-button-1" type="button" aria-haspopup="true"
+                                        aria-expanded="false" data-headlessui-state=""><span
+                                            class="font-medium text-white" href="./LogIn.html"> <a
+                                                href="./LogIn.html">Sign In</a></span></button></div>
+
+                                                <button id="signout" class="shopout" style="display: block;
+                                    align-items: center; color: rgba(242, 34, 34, 0.936)line; " > Sign Out </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+            <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mb-6">
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/hot-stuff-hoodie">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image1.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg75%2Fshotzoom%2F3268%2Fa76-403s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Hot Stuff
+                            Hoodie</h3>
+                        <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg></div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->4050</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/naruto-itachi-print-t-shirt">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image2.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F951033s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Naruto
+                            Itachi Print T-shirt</h3>
+                        <div class="flex items-center gap-x-1"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                                class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>No Reviews</div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->1700</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Addto bag</button> </a> 
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/orange-starter-logo-t-shirt">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image3.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg76%2Fshotzoom%2F3656%2Fd97-855s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Orange
+                            Starter Logo T-shirt</h3>
+                        <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg></div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->1458</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/tupac-california-love-t-shirt">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image (3).webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fitemimages%2Faltitemzoom%2F419411s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Tupac
+                            California Love T-Shirt</h3>
+                        <div class="flex items-center gap-x-1"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                                class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>No Reviews</div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->1458</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/rose-printed-hoodie">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image4.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FKvbxgZV8%252Fpocketmen1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Rose Printed
+                            Hoodie</h3>
+                        <div class="flex items-center gap-x-1"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                                class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>No Reviews</div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->5400</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/oversize-faux-leather-biker-jacket">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image5.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252F8PsKVjKm%252Fcontrast1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Oversize
+                            Faux Leather Biker Jacket</h3>
+                        <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg></div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->8650</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/oversized-denim-jacket">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image 6.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fnextzone.vercel.app%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fi.postimg.cc%252FL5L4F5br%252Fcup1.jpg%26w%3D640%26q%3D75&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Oversized
+                            Denim Jacket</h3>
+                        <div class="flex items-center gap-x-1"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                                class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>No Reviews</div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->5500</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+                <div class="flex flex-col">
+                    <div class="group cursor-pointer" href="/product/black-hoodie-with-contrast-graphic">
+                        <div class="relative w-full h-80 md:h-auto rounded-lg overflow-hidden"><span
+                                style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:166.66666666666669%"></span><img
+                                    alt="" src="./image7.webp" decoding="async" data-nimg="responsive"
+                                    class="w-full h-full object-center object-cover hover:opacity-75"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"><noscript><img
+                                        alt="" sizes="100vw"
+                                        srcSet="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75 3840w"
+                                        src="/_next/image?url=https%3A%2F%2Fxcdn.next.co.uk%2Fcommon%2Fitems%2Fdefault%2Fdefault%2Fpublications%2Fg88%2Fshotzoom%2F1114%2F230-742s.jpg%3Fim%3DResize%2Cwidth%3D364&amp;w=3840&amp;q=75"
+                                        decoding="async" data-nimg="responsive"
+                                        style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                        class="w-full h-full object-center object-cover hover:opacity-75"
+                                        loading="lazy" /></noscript></span></div>
+                        <h3 class="mt-4 text-sm text-gray-700 line-clamp-1 hover:text-gray-900">Black Hoodie
+                            With Contrast Graphic</h3>
+                        <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-indigo-500 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="text-gray-300 h-5 w-5 flex-shrink-0">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg></div>
+                        <p class="mt-1 text-lg font-medium text-gray-900">₹<!-- -->4050</p>
+                    </div> <a href="./product.html"> <button
+                        class="relative flex bg-gray-200 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-300">Add
+                        to bag</button> </a>
+                </div>
+            </div>
+            <div class="block md:hidden -mt-4">
+                <p class="text-sm font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer"
+                    href="/search?sort=newest">Browse all<span aria-hidden="true"> →</span></p>
+            </div>
+            </section>
+        </div>
+    </div>
+    <footer class="bg-gray-800 mt-4" aria-labelledby="footer-heading">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <p class="mt-2 text-base text-gray-300 md:mt-0">© 2023 NextShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none"></div>
+    </div>
+
+<script type="module" src="./LogIn.js"></script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+       
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+       
+        import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDLjvz74O5VakkMg65v7N0o_PdN0HM1JhM",
+            authDomain: "ecommerce-task-f5146.firebaseapp.com",
+            projectId: "ecommerce-task-f5146",
+            storageBucket: "ecommerce-task-f5146.appspot.com",
+            messagingSenderId: "192303641967",
+            appId: "1:192303641967:web:bf9a15e37219036205e49a",
+            measurementId: "G-XCGLBLN54Y"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                //   const uid = user.uid;
+                // ...
+                document.getElementById("headlessui-menu-button-1").innerHTML = user.email;
+
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+
+
+        var signout2 = document.getElementById("signout").addEventListener("click", () => {
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                document.getElementById("headlessui-menu-button-1").innerHTML = "Sign In";
+                window.location.href = "./index.html"
+            }).catch((error) => {
+                // An error happened.
+                console.log(error, "logout error");
+            });
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
